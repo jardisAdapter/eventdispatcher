@@ -7,9 +7,9 @@
 [![PSR-12](https://img.shields.io/badge/Code%20Style-PSR--12-blue.svg)](phpcs.xml)
 [![PSR-14](https://img.shields.io/badge/Events-PSR--14-brightgreen.svg)](https://www.php-fig.org/psr/psr-14/)
 
-> Part of the **[Jardis Business Platform](https://jardis.io)** — Enterprise-grade PHP components for Domain-Driven Design
+> Part of **[Jardis](https://jardis.io)** — the Domain-Driven Design platform for PHP. You model your domain; Jardis generates the production-ready hexagonal code (DTOs, Command/Query handlers, repositories, persistence). This package is part of the open-source foundation that generated code runs on.
 
-**Domain Events as first-class citizens.** A lightweight PSR-14 event dispatcher — built for DDD applications where events drive the communication between layers and contexts. No framework, no overhead, no magic. Just what you need.
+**Domain events for PHP as first-class citizens.** A lightweight PSR-14 event dispatcher — built for DDD applications where events drive the communication between layers and contexts. No framework, no overhead, no magic. Just what you need.
 
 ---
 
