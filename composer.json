@@ -1,6 +1,6 @@
 {
     "name": "jardisadapter/eventdispatcher",
-    "homepage": "https://docs.jardis.io/en/adapter/eventdispatcher",
+    "homepage": "https://jardis.io",
     "description": "PSR-14 event dispatcher for PHP with priority-ordered listeners, type-hierarchy matching, stoppable events, and deferred dispatch via EventCollector; a building block of the open-source foundation that Jardis-generated DDD code runs on",
     "type": "library",
     "license": "MIT",
@@ -8,7 +8,7 @@
     "prefer-stable": true,
     "authors": [
         {
-            "name": "Headgent Development",
+            "name": "Jardis Development",
             "email": "jardisDev@headgent.com"
         }
     ],
@@ -31,8 +31,10 @@
         "psr-4": {
             "JardisAdapter\\EventDispatcher\\Tests\\": "tests/"
         }
-    },    "support": {
+    },
+    "support": {
         "issues": "https://github.com/jardisAdapter/eventdispatcher/issues",
+        "docs": "https://docs.jardis.io/en/adapter/eventdispatcher",
         "email": "jardisDev@headgent.com"
     },
     "keywords": [
