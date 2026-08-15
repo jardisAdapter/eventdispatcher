@@ -81,11 +81,11 @@ final class OrderCreated extends Event
 Extending `Event` is optional. Any object can be dispatched; stoppable behavior requires `StoppableEventInterface`.
 
 ## KERNEL INTEGRATION
-`jardiscore/foundation` is deleted. ENV bootstrap moved to `jardiscore/kernel`'s Bootstrap-Packer (`Bootstrap\BuildDomainKernelFromEnv`), which wires the dispatcher pair via two handlers under `src/Bootstrap/Handler/`: `BuildEventListenerProviderFromEnv` builds the shared `ListenerProvider`, `BuildEventDispatcherFromProvider` wraps it into the PSR-14 dispatcher.
-- Access: `$kernel->eventDispatcher(): ?EventDispatcherInterface` (`DomainKernel.php:81`).
-- `$kernel->eventListenerRegistry(): ?EventListenerRegistryInterface` (`DomainKernel.php:86`) — same `ListenerProvider` instance, exposed so generated `{Agg}EventRouter` scaffolds can register listeners.
+Accessed from the outside via the Koffer kernel — how the kernel itself wires and bootstraps the dispatcher pair is the kernel's own concern, s. Skill `core-kernel`.
+- Access: `$kernel->eventDispatcher(): ?EventDispatcherInterface`.
+- `$kernel->eventListenerRegistry(): ?EventListenerRegistryInterface` — same `ListenerProvider` instance, exposed so generated `{Agg}EventRouter` scaffolds can register listeners.
 - In generated behavior classes extending `{Domain}Context`: `$this->resource()->eventDispatcher()`.
-- Returns the instance or `null` — there is no third state. `DomainKernel::eventDispatcher()` is typed `?EventDispatcherInterface` (`core/kernel/src/DomainKernel.php:81`), so `false` is impossible. `null` means: adapter not installed, or no listener provider was built.
+- Returns the instance or `null` — there is no third state. `null` means: adapter not installed, or no listener provider was built.
 
 ## LAYER
 | Layer | Role |
