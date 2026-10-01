@@ -4,7 +4,7 @@ description: PSR-14 dispatcher, priority ordering, type-hierarchy matching, stop
 user-invocable: false
 zone: post-active
 persona: C
-prerequisites: [rules-architecture, rules-patterns]
+prerequisites: [foundation-architecture, foundation-patterns]
 next: []
 ---
 
