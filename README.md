@@ -202,7 +202,7 @@ The dispatcher is the **postman** — it receives the event and delivers it to a
 
 ## Jardis Kernel Integration
 
-`jardiscore/foundation` is deleted. ENV bootstrap now lives in `jardiscore/kernel`'s Bootstrap-Packer (`Bootstrap\BuildDomainKernelFromEnv`), which wires the dispatcher pair via two handlers under `core/kernel/src/Bootstrap/Handler/`: `BuildEventListenerProviderFromEnv` builds the shared `ListenerProvider`, `BuildEventDispatcherFromProvider` wraps it into the PSR-14 dispatcher.
+ENV bootstrap lives in `jardiscore/kernel`'s Bootstrap-Packer (`Bootstrap\BuildDomainKernelFromEnv`), which wires the dispatcher pair via two handlers: `BuildEventListenerProviderFromEnv` builds the shared `ListenerProvider`, `BuildEventDispatcherFromProvider` wraps it into the PSR-14 dispatcher.
 
 ```php
 // Inside a class extending `{Domain}Context`
@@ -217,7 +217,7 @@ The same `ListenerProvider` instance is also reachable via `$kernel->eventListen
 
 ### Two-State Semantics
 
-`DomainKernel::eventDispatcher()` is typed `?EventDispatcherInterface` (`core/kernel/src/DomainKernel.php:81`) — the return value is the instance or `null`, there is no third state.
+`DomainKernel::eventDispatcher()` is typed `?EventDispatcherInterface` — the return value is the instance or `null`, there is no third state.
 
 | Return value | Meaning |
 |-------------|---------|
